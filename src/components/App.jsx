@@ -1,16 +1,14 @@
+import React from 'react';
+import Recipe from './Recipe/Recipe';
+import recipesData from './Recipe/RecipesData';
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      {recipesData.map((recipe, index) => (
+        <Recipe key={index} recipe={recipe} />
+      ))}
     </div>
   );
 };
