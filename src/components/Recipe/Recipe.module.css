@@ -1,0 +1,27 @@
+.recipe {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+  }
+  
+  .recipe img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  
+  /* RecipeInfo.module.css */
+  .recipe-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  
+  .recipe-info span {
+    flex-grow: 1;
+  }
+  
+  .recipe-info svg {
+    margin-left: 8px;
+  }

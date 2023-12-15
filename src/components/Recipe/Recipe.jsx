@@ -1,14 +1,14 @@
-// Recipe.js
 import React from 'react';
 import PropTypes from 'prop-types';
 import RecipeInfo from './RecipeInfo';
-import { FaClock, FaServicestack, FaFire, FaStar } from 'react-icons/fa'; // Імпортуємо іконки з react-icons
+import { FaClock, FaServicestack, FaFire, FaStar } from 'react-icons/fa';
+import styles from './Recipe.module.css';
 
 const Recipe = ({ recipe }) => {
   const { name, time, servings, calories, difficulty, image } = recipe;
 
   return (
-    <div>
+    <div className={styles.recipe}>
       <h2>{name}</h2>
       <img src={image} alt={name} />
       <RecipeInfo text={`Time: ${time} minutes`} icon={<FaClock />} />

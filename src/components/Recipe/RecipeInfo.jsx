@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Recipe.module.css';
 
 const RecipeInfo = ({ text, icon }) => {
   return (
-    <div>
+    <div className={styles.recipeInfo}>
       <span>{text}</span>
       {icon}
     </div>
