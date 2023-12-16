@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import RecipeInfo from './RecipeInfo';
 import { FaClock, FaServicestack, FaFire, FaStar } from 'react-icons/fa';
 import styles from './Recipe.module.css';
@@ -19,15 +19,15 @@ const Recipe = ({ recipe }) => {
   );
 };
 
-Recipe.propTypes = {
-  recipe: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
-    servings: PropTypes.number.isRequired,
-    calories: PropTypes.number.isRequired,
-    difficulty: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// Recipe.propTypes = {
+//   recipe: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     time: PropTypes.string.isRequired,
+//     servings: PropTypes.number.isRequired,
+//     calories: PropTypes.number.isRequired,
+//     difficulty: PropTypes.number.isRequired,
+//     image: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
 
 export default Recipe;
