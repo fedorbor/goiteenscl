@@ -1,0 +1,17 @@
+.sticker {
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.2s ;
+}
+
+.sticker:hover {
+  transform: scale(1.05);
+}
+
+.sticker img {
+  max-width: 100%;
+  height: auto;
+}

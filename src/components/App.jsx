@@ -1,21 +1,26 @@
-// import React from 'react';
-// import Recipe from './Recipe/Recipe';
-// import recipesData from './Recipe/RecipesData';
+import { StickersList } from "./Sticker/StickersList";
+import { Component } from "react";
+import stickerData from "../components/stickerData.json";
 
-import { Alert } from "./Alert/Alert";
-import { ColorPicker } from "./ColorPicker/ColorPicker";
-import { colorPickerOptions } from "./colorOptions"
+export class App extends Component {
+  state = {
+    label: '',
+  };
 
-export const App = () => {
-  return (
-    <div>
-      {/* {recipesData.map((recipe, index) => (
-        <Recipe key={index} recipe={recipe} />
-      ))} */}
-      <ColorPicker options={colorPickerOptions}/>
-      <Alert text="перестань" type="warning" />
-      <Alert text="спрацювало" type="success" />
-      <Alert text="error" type="error" />
-    </div>
-  );
-};  
+  handleChange = (newLabel) => {
+    this.setState({
+      label: newLabel,
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <StickersList
+          handleChange={this.handleChange}
+          stickerData={stickerData}
+        />
+      </>
+    );
+  }
+}
