@@ -24,14 +24,32 @@
 //     );
 //   }
 // }
-import React from 'react';
-import ConferenceRegistration from './Regestration/ConferenceRegistration';
+// import React from 'react';
+// import ConferenceRegistration from './Regestration/ConferenceRegistration';
 
-export const App = () => {
+// export const App = () => {
+//   return (
+//     <div>
+//       <ConferenceRegistration />
+//     </div>
+//   );
+// };
+import React from 'react';
+import { ToDoList } from './ToDo/ToDoList';
+import { Component } from "react";
+import initialTodos from './toDo.json'
+export class App extends Component{
+   state={
+    toDos : initialTodos,
+    filter:''
+  }
+  render(){
   return (
     <div>
-      <ConferenceRegistration />
+      <ToDoList toDos={this.state.toDos}/>
     </div>
   );
+}
 };
+
 
