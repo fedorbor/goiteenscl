@@ -1,0 +1,11 @@
+.galleryItem {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
