@@ -171,76 +171,87 @@
 //   );
 // }
 
-import React, { useState, useEffect } from 'react';
-import Searchbar from './Search/Searchbar';
-import ImageGallery from './Search/ImageGallery';
-import Button from './Search/Button';
-import Loader from './Search/Loader';
-import Modal from './Search/Modal';
+// import React, { useState, useEffect } from 'react';
+// import Searchbar from './Search/Searchbar';
+// import ImageGallery from './Search/ImageGallery';
+// import Button from './Search/Button';
+// import Loader from './Search/Loader';
+// import Modal from './Search/Modal';
 
 
-const API_KEY = '39207240-5c487a84c917432aa28d0bb48';
-const BASE_URL = 'https://pixabay.com/api/';
+// const API_KEY = '39207240-5c487a84c917432aa28d0bb48';
+// const BASE_URL = 'https://pixabay.com/api/';
 
-export const App = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [images, setImages] = useState([]);
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+// export const App = () => {
+//   const [searchQuery, setSearchQuery] = useState('');
+//   const [images, setImages] = useState([]);
+//   const [page, setPage] = useState(1);
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    setImages([]);
-    setPage(1);
-  };
+//   const handleSearch = (query) => {
+//     setSearchQuery(query);
+//     setImages([]);
+//     setPage(1);
+//   };
 
-  const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
+//   const handleLoadMore = () => {
+//     setPage((prevPage) => prevPage + 1);
+//   };
 
-  const handleImageClick = (largeImageURL) => {
-    setSelectedImage(largeImageURL);
-  };
+//   const handleImageClick = (largeImageURL) => {
+//     setSelectedImage(largeImageURL);
+//   };
 
-  const handleCloseModal = () => {
-    setSelectedImage(null);
-  };
+//   const handleCloseModal = () => {
+//     setSelectedImage(null);
+//   };
 
-  useEffect(() => {
-    if (!searchQuery) return;
+//   useEffect(() => {
+//     if (!searchQuery) return;
 
-    const fetchImages = async () => {
-      setIsLoading(true);
+//     const fetchImages = async () => {
+//       setIsLoading(true);
 
-      try {
-        const response = await fetch(
-          `${BASE_URL}?q=${searchQuery}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
-        );
+//       try {
+//         const response = await fetch(
+//           `${BASE_URL}?q=${searchQuery}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
+//         );
 
-        if (!response.ok) {
-          throw new Error('Failed to fetch images');
-        }
+//         if (!response.ok) {
+//           throw new Error('Failed to fetch images');
+//         }
 
-        const data = await response.json();
-        setImages((prevImages) => [...prevImages, ...data.hits]);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+//         const data = await response.json();
+//         setImages((prevImages) => [...prevImages, ...data.hits]);
+//       } catch (error) {
+//         console.error(error);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
 
-    fetchImages();
-  }, [searchQuery, page]);
+//     fetchImages();
+//   }, [searchQuery, page]);
 
+//   return (
+//     <div>
+//       <Searchbar onSubmit={handleSearch} />
+//       <ImageGallery images={images} onImageClick={handleImageClick} />
+//       {isLoading && <Loader />}
+//       {images.length > 0 && !isLoading && <Button onLoadMore={handleLoadMore} />}
+//       {selectedImage && <Modal imageURL={selectedImage} onClose={handleCloseModal} />}
+//     </div>
+//   );
+// };
+import React from 'react';
+import RegistrationForm from './RegistrationForm/RegistrationForm';
+
+export function App() {
   return (
     <div>
-      <Searchbar onSubmit={handleSearch} />
-      <ImageGallery images={images} onImageClick={handleImageClick} />
-      {isLoading && <Loader />}
-      {images.length > 0 && !isLoading && <Button onLoadMore={handleLoadMore} />}
-      {selectedImage && <Modal imageURL={selectedImage} onClose={handleCloseModal} />}
+      <RegistrationForm />
     </div>
   );
-};
+}
+
