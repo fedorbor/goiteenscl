@@ -256,7 +256,7 @@
 // }
 
 import React, { useState } from 'react';
-import './App.css';
+import './App.module.css';
 import Section from './Feedback/Section';
 import Statistics from './Feedback/Statistics';
 import FeedbackOptions from './Feedback/FeedbackOptions';
