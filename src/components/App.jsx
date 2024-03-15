@@ -268,7 +268,8 @@ export const App = () => {
   const [bad, setBad] = useState(0);
 
   const options = ['good', 'neutral', 'bad'];
-
+  const [customFeedbacks, setCustomFeedbacks] = useState([]);
+ 
   const handleLeaveFeedback = option => {
     switch (option) {
       case 'good':
@@ -281,7 +282,9 @@ export const App = () => {
         setBad(prevState => prevState + 1);
         break;
       default:
-        return;
+      
+        setCustomFeedbacks(prevState => [...prevState, option]);
+        break;
     }
   };
 
