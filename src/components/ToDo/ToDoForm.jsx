@@ -12,7 +12,7 @@ function ToDoForm({ onAdd }) {
     e.preventDefault();
 
     if (newToDo.trim() === '') {
-      return; // Не додавати порожні завдання
+      return; 
     }
 
     onAdd(newToDo);
@@ -34,4 +34,4 @@ function ToDoForm({ onAdd }) {
     </form>
   );
 }
-export default ToDoForm
+export default ToDoForm;

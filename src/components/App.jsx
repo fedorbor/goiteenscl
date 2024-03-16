@@ -34,23 +34,23 @@
 //     </div>
 //   );
 // };
-// import React from 'react';
-// import { ToDoList } from './ToDo/ToDoList';
-// import { Component } from "react";
-// import initialTodos from './toDo.json'
-// export class App extends Component{
-//    state={
-//     toDos : initialTodos,
-//     filter:''
-//   }
-//   render(){
-//   return (
-//     <div>
-//       <ToDoList toDos={this.state.toDos}/>
-//     </div>
-//   );
-// }
-// };
+import React from 'react';
+import { ToDoList } from './ToDo/ToDoList';
+import { Component } from "react";
+import initialTodos from './toDo.json'
+export class App extends Component{
+   state={
+    toDos : initialTodos,
+    filter:''
+  }
+  render(){
+  return (
+    <div>
+      <ToDoList toDos={this.state.toDos}/>
+    </div>
+  );
+}
+};
 // import React, { Component } from 'react';
 // import ContactForm from './ContactForm/ContactForm';
 // import Filter from './ContactForm/Filter';
@@ -255,69 +255,102 @@
 //   );
 // }
 
-import React, { useState } from 'react';
-import './App.module.css';
-import Section from './Feedback/Section';
-import Statistics from './Feedback/Statistics';
-import FeedbackOptions from './Feedback/FeedbackOptions';
-import Notification from './Feedback/Notification';
+// import React, { useState } from 'react';
+// import './App.module.css';
+// import Section from './Feedback/Section';
+// import Statistics from './Feedback/Statistics';
+// import FeedbackOptions from './Feedback/FeedbackOptions';
+// import Notification from './Feedback/Notification';
 
-export const App = () => {
-  const [good, setGood] = useState(0);
-  const [neutral, setNeutral] = useState(0);
-  const [bad, setBad] = useState(0);
+// export const App = () => {
+//   const [good, setGood] = useState(0);
+//   const [neutral, setNeutral] = useState(0);
+//   const [bad, setBad] = useState(0);
 
-  const options = ['good', 'neutral', 'bad'];
-  const [customFeedbacks, setCustomFeedbacks] = useState([]);
+//   const options = ['good', 'neutral', 'bad'];
+//   const [customFeedbacks, setCustomFeedbacks] = useState([]);
  
-  const handleLeaveFeedback = option => {
-    switch (option) {
-      case 'good':
-        setGood(prevState => prevState + 1);
-        break;
-      case 'neutral':
-        setNeutral(prevState => prevState + 1);
-        break;
-      case 'bad':
-        setBad(prevState => prevState + 1);
-        break;
-      default:
+//   const handleLeaveFeedback = option => {
+//     switch (option) {
+//       case 'good':
+//         setGood(prevState => prevState + 1);
+//         break;
+//       case 'neutral':
+//         setNeutral(prevState => prevState + 1);
+//         break;
+//       case 'bad':
+//         setBad(prevState => prevState + 1);
+//         break;
+//       default:
       
-        setCustomFeedbacks(prevState => [...prevState, option]);
-        break;
-    }
-  };
+//         setCustomFeedbacks(prevState => [...prevState, option]);
+//         break;
+//     }
+//   };
 
-  const countTotalFeedback = () => good + neutral + bad;
+//   const countTotalFeedback = () => good + neutral + bad;
 
-  const countPositiveFeedbackPercentage = () => {
-    const total = countTotalFeedback();
-    return total > 0 ? Math.round((good / total) * 100) : 0;
-  };
+//   const countPositiveFeedbackPercentage = () => {
+//     const total = countTotalFeedback();
+//     return total > 0 ? Math.round((good / total) * 100) : 0;
+//   };
 
-  const totalFeedback = countTotalFeedback();
-  const positivePercentage = countPositiveFeedbackPercentage();
+//   const totalFeedback = countTotalFeedback();
+//   const positivePercentage = countPositiveFeedbackPercentage();
 
-  return (
-    <div>
-      <Section title="Please leave feedback">
-        <FeedbackOptions options={options} onLeaveFeedback={handleLeaveFeedback} />
-      </Section>
+//   return (
+//     <div>
+//       <Section title="Please leave feedback">
+//         <FeedbackOptions options={options} onLeaveFeedback={handleLeaveFeedback} />
+//       </Section>
 
-      <Section title="Statistics">
-        {totalFeedback > 0 ? (
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={totalFeedback}
-            positivePercentage={positivePercentage}
-          />
-        ) : (
-          <Notification message="There is no feedback" />
-        )}
-      </Section>
-    </div>
-  );
-};
+//       <Section title="Statistics">
+//         {totalFeedback > 0 ? (
+//           <Statistics
+//             good={good}
+//             neutral={neutral}
+//             bad={bad}
+//             total={totalFeedback}
+//             positivePercentage={positivePercentage}
+//           />
+//         ) : (
+//           <Notification message="There is no feedback" />
+//         )}
+//       </Section>
+//     </div>
+//   );
+// };
+
+// import React from 'react';
+// import { Form } from './RegistrationForm/Form'; 
+// import './App.module.css';
+
+// export const App = () => {
+//   return (
+//     <div className="app">
+//       <h1>Form App</h1>
+//       <Form />
+//     </div>
+//   );
+// };
+
+// import React, { useState } from 'react';
+// import Clock from './Clock/Clock';
+// import './App.module.css';
+
+// export const App = () => {
+//   const [showClock, setShowClock] = useState(true);
+
+//   const toggleClock = () => {
+//     setShowClock(prevShowClock => !prevShowClock);
+//   };
+
+//   return (
+//     <div className="app">
+//       <h1>React Clock App</h1>
+//       <button onClick={toggleClock}>{showClock ? 'Hide Clock' : 'Show Clock'}</button>
+//       {showClock && <Clock />}
+//     </div>
+//   );
+// };
 

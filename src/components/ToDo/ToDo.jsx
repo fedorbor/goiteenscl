@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ToDo.module.css';
 
-export function ToDo({ id, text, completed, onToggleComplete, onDelete }) {
+function ToDo({ id, text, completed, onToggleComplete, onDelete }) {
   return (
     <li className={`${styles.todoItem} ${completed ? styles.completed : ''}`}>
       <input
@@ -15,5 +15,7 @@ export function ToDo({ id, text, completed, onToggleComplete, onDelete }) {
         Delete
       </button>
     </li>
-  );}
-  export default ToDo
+  );
+}
+
+export default ToDo;

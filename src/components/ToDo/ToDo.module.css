@@ -13,6 +13,7 @@
   }
   
   .deleteButton {
+    text-decoration: none;
     margin-left: auto;
     padding: 5px 10px;
     background-color: #ff0000;
