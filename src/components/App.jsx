@@ -34,23 +34,23 @@
 //     </div>
 //   );
 // };
-import React from 'react';
-import { ToDoList } from './ToDo/ToDoList';
-import { Component } from "react";
-import initialTodos from './toDo.json'
-export class App extends Component{
-   state={
-    toDos : initialTodos,
-    filter:''
-  }
-  render(){
-  return (
-    <div>
-      <ToDoList toDos={this.state.toDos}/>
-    </div>
-  );
-}
-};
+// import React from 'react';
+// import { ToDoList } from './ToDo/ToDoList';
+// import { Component } from "react";
+// import initialTodos from './toDo.json'
+// export class App extends Component{
+//    state={
+//     toDos : initialTodos,
+//     filter:''
+//   }
+//   render(){
+//   return (
+//     <div>
+//       <ToDoList toDos={this.state.toDos}/>
+//     </div>
+//   );
+// }
+// };
 // import React, { Component } from 'react';
 // import ContactForm from './ContactForm/ContactForm';
 // import Filter from './ContactForm/Filter';
@@ -354,3 +354,69 @@ export class App extends Component{
 //   );
 // };
 
+// import React, { useState, useEffect } from 'react';
+// import ContactForm from './ContactForm/ContactForm';
+// import ContactList from './ContactForm/ContactList';
+// import Filter from './ContactForm/Filter';
+// import styles from './App.module.css'; 
+
+
+// export const App = () => {
+//   const [contacts, setContacts] = useState([]);
+//   const [filter, setFilter] = useState('');
+
+//   useEffect(() => {
+//     const storedContacts = JSON.parse(localStorage.getItem('contacts'));
+//     if (storedContacts) setContacts(storedContacts);
+//   }, []);
+
+//   useEffect(() => {
+//     localStorage.setItem('contacts', JSON.stringify(contacts));
+//   }, [contacts]);
+
+//   const addContact = newContact => {
+//     if (contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
+//       alert(`${newContact.name} is already in contacts!`);
+//       return;
+//     }
+//     setContacts(prevContacts => [...prevContacts, newContact]);
+//   };
+
+//   const deleteContact = id => {
+//     setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
+//   };
+
+//   const filteredContacts = contacts.filter(contact =>
+//     contact.name.toLowerCase().includes(filter.toLowerCase())
+//   );
+
+//   return (
+//     <div className={styles.app}>
+//       <h1>Phonebook</h1>
+//       <div className={styles.container}>
+//         <ContactForm addContact={addContact} />
+        
+//         <h2>Contacts</h2>
+//         <Filter filter={filter} setFilter={setFilter} />
+//         <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
+//       </div>
+//     </div>
+//   );
+// };
+import React, { createContext } from "react";
+import ChildComponent from "./MyComponent/ChildComponent"; 
+
+export const MyContext = createContext("default value");
+
+
+export const App = () => {
+  return (
+    <div>
+      <h1>Context Example</h1>
+      <MyContext.Provider value="custom value">
+        <ChildComponent />
+      </MyContext.Provider>
+    </div>
+  );
+};
+ 

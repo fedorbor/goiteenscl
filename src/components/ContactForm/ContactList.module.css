@@ -1,8 +1,15 @@
-.listContainer {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .listItem {
-    margin-bottom: 10px;
-  }
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-item {
+  margin-bottom: 5px;
+  padding: 8px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.contact-item:hover {
+  background-color: #e0e0e0;
+}
